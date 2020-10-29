@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+        background-color: linen;
+        }
+
+        h1 {
+        color: maroon;
+        margin-left: 40px;
+        }
+        input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        height: 100%;
+        }
+
+        textarea {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        }
+</style>
+    <title>Regex Query Tool</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 class="mt-2">
+                    Regex Query Tool
+                </h1>
+                <hr class="mt-0 mb-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <p style="text-align:left;">
+                        Regex {{ form.regex_input }}
+                        String {{ form.string_input }}</p>
+                    <select class="form-control" name="action">
+                        <option value="all">All Matches</option>
+                    </select>
+                    <br>
+                    <br>
+            
+                    <input type="submit" <button type="button"  value=" Match"></button>
+                    <br>
+                    <br>
+                    {% if after %}
+                        {% if match %}
+  
+                            <input type="text" value="{{ match }}">
+                        {% else %}
+                            <p style="color:#FF0000;text-align:center;">Regex is not matched</p>
+                        {% endif %}
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+import flask from Flask 
+app = Flask(__name__)
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
